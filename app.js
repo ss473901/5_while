@@ -1,57 +1,29 @@
-// alert('Hello');
+let enemy = 10;
+let command;
+let random;
 
-// //
-// //
-// //while文
+while(true) {
+  command = prompt('敵が現れた!【1】攻撃　【2】逃げる');
+  random = Math.floor(Math.random() * 10);
 
-// let state = true;
+  //[攻撃]を選択した場合
+  if(command === '1'){
 
-// while(state){
-//   //0~9の乱数を生成する
-//   let random = Math.floor(Math.random() * 10);
+    enemy = enemy - random;
+    console.log(random + 'の攻撃!');
+    if(enemy <= 0){
+      console.log('敵を倒した！');
+      break;
+    }
+    console.log('敵の体力は残り' + enemy + 'です');
 
-//   //数値が3になったら繰り返し処理を終了する
-//   if(random === 3) state = false;
+  //[逃げる]を選択した場合
+  }　else if (command ===  '2'){
 
-//   console.log(random);
+    console.log('無事に逃げました');
+    break;
 
-// }
+  }
+}
 
-
-//
-// //
-// //for文
-// for ( let i = 0; i<5; i++ ){
-//   console.log(i);
-// }
-
-
-//
-//
-//break文 forの場合
-// // for ( let i = 0; i<5; i++){
-
-// //   console.log(i);
-
-// //   if ( i === 3)break;
-
-// // }
-
-
-// //break whileの場合
-// let state = true;
-
-// while(state){
-//   let random = Math.floor(Math.random() * 10);
-
-//   if(random === 3) break;
-
-//   console.log(random);
-// }
-
-
-
-//
-//
-//continue文
-for ( let i = 0; i<10; i++)
+console.log('ゲーム終了');
